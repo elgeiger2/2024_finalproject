@@ -49,7 +49,6 @@
          countries = data[1],
          boundaries = data[2];
  
-         console.log(boundaries)
      //translate TopoJSON
      var countryBound = topojson.feature(countries, countries.objects.Countries2),
          armBound = topojson.feature(boundaries, boundaries.objects.Boundaries).features;
@@ -65,10 +64,7 @@
  
          armBound = joinData(armBound, csvData);
  
-         //create the color scale
-         var colorScale = makeColorScale(csvData);
- 
-         setEnumerationUnits(armBound,map,path,colorScale);
+         setEnumerationUnits(armBound,map,path);
  
          createDropdown(csvData);
  
@@ -105,13 +101,13 @@
               //loop through csv to assign each set of csv attribute values to geojson region
               for (var i=0; i<csvData.length; i++){
                 var csvArm = csvData[i]; //the current region
-                var csvKey = csvArm.OBJECTID; //the CSV primary key
+                var csvKey = csvArm.NAME; //the CSV primary key
          
                 //loop through geojson regions to find correct region
                 for (var a=0; a<armBound.length; a++){
          
                     var geojsonProps = armBound[a].properties; //the current region geojson properties
-                    var geojsonKey = geojsonProps.OBJECTID; //the geojson primary key
+                    var geojsonKey = geojsonProps.NAME; //the geojson primary key
          
                     //where primary keys match, transfer csv data to geojson properties object
                     if (geojsonKey == csvKey){
@@ -127,36 +123,9 @@
             return armBound;
          };
          
+     
          
-         //function to create color scale generator
-         function makeColorScale(data){
-             var colorClasses = [
-                 "#D4B9DA",
-                 "#C994C7",
-                 "#DF65B0",
-                 "#DD1C77",
-                 "#980043"
-             ];
-         
-             //create color scale generator
-             var colorScale = d3.scaleQuantile()
-                 .range(colorClasses);
-         
-             //build array of all values of the expressed attribute
-             var domainArray = [];
-             for (var i=0; i<data.length; i++){
-                 var val = parseFloat(data[i][expressed]);
-                 domainArray.push(val);
-             };
-         
-             //assign array of expressed values as scale domain
-             colorScale.domain(domainArray);
-         
-             return colorScale;
-         
-         };
-         
-         function setEnumerationUnits(armBound, map, path, colorScale){
+         function setEnumerationUnits(armBound, map, path){
          
              var armisticelayer = map
              .selectAll(".boundaries")
@@ -164,11 +133,17 @@
              .enter()
              .append("path")
              .attr("class", function(d){
-                 return "boundaries " + d.properties.OBJECTID;
+                 return "boundaries " + d.properties.NAME;
              })
              .attr("d", path)
-             .style("fill", function(d){
-                 return colorScale(d.properties[expressed]);
+             .style("fill", function (d) {
+                 var value = d.properties[expressed];
+                 if (value = "Arab State") {
+                     return "#ffccff";
+                 } else if (value = "Jewish State"){
+                     return "#99ffcc";
+                 } else if (value = "Water") {return "#99ccff";}
+                 else if (value = "Corpus Separatum") {return "#ccc"}
              })
              .on("mouseover", function(event, d){
                  highlight(d.properties);
@@ -222,20 +197,18 @@
              //change the expressed attribute
              expressed = attribute;
          
-             //recreate the color scale
-             var colorScale = makeColorScale(csvData);
-         
              //recolor enumeration units
              var armisticelayer = d3.selectAll(".boundaries")
              .transition()
              .duration(1000)
              .style("fill", function (d) {
                  var value = d.properties[expressed];
-                 if (value) {
-                     return colorScale(value);
-                 } else {
-                     return "#ccc";
-                 }
+                 if (value = "Arab State") {
+                     return "#ffccff";
+                 } else if (value = "Jewish State"){
+                     return "#99ffcc";
+                 } else if (value = "Water") {return "#99ccff";}
+                 else if (value = "Corpus Separatum") {return "#ccc"}
              });
          
          };
@@ -246,7 +219,7 @@
          function highlight(props){
              //change stroke
              var selected = d3
-                 .selectAll("." + props.OBJECTID )
+                 .selectAll("." + props.NAME )
                  .style("stroke", "white")
                  .style("stroke-width", "2.5");
          
@@ -255,7 +228,7 @@
          
          //function to reset the element style on mouseout
          function dehighlight(props){
-             var selected = d3.selectAll("." + props.OBJECTID)
+             var selected = d3.selectAll("." + props.NAME)
                  .style("stroke", function(){
                      return getStyle(this, "stroke")
                  })
@@ -287,7 +260,7 @@
              var infolabel = d3.select("body")
                  .append("div")
                  .attr("class", "infolabel")
-                 .attr("id", props.COUNTY_NAME + "_label")
+                 .attr("id", props.NAME + "_label")
                  .html(labelAttribute);
          
              var countyName = infolabel.append("div")
@@ -320,3 +293,4 @@
          
         
  })();
+ 
