@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-            <title></title>
+            <title>The Gaza Conflict: A Brief History</title>
 
         <!--put your external stylesheet links here-->
         <link rel="stylesheet" href="css/style.css">
@@ -13,12 +13,46 @@
 
          <!--you can also place internal styles here;
              place these within <style> tags-->
+        <style> 
+        #legend {
+            position: absolute;
+            top: 20;
+            left: 40;
+            z-index: 1000;
+            margin-left: 50px;
+            margin-top: 130px;
+            background: white;
+            border-radius: 5px;
+            padding: 5px 10px;
+            box-shadow: 0 0 0 2px rgb(0 0 0 / 10%);
+        }
+        #infoText {
+            color: beige;
+            position: absolute;
+            top: 300px;
+            left: 840px;
+            font-size: xx-large;
+            
+        }
+        </style>
         
     </head>
 
-    <body>
+    <body style = "background-color: #2e2b29;">
         <!--put your initial page content here-->
-
+        <div class = "title-bar">
+            <div class = "title-bar-center">
+                <span class = "title-bar-title">The Gaza Conflict: A Brief History</span>
+            </div>
+        </div>
+        <div id="legend">
+            <img src="img/Legend.png"
+                height = "100"
+                width = "90" />
+        </div>
+        <div> 
+            <p id="infoText"></p>
+        </div>
         <!--you can also use this space for internal scripts;
         place these within <script> tags-->
 

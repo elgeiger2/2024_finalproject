@@ -3,6 +3,11 @@
     //pseudo-global variables
     var attrArray = ["UN Partition Plan", "1949 Armistice"]; //list of attributes
     var expressed = attrArray[0]; //initial attribute
+
+    var layer1 = "After the conclusion of WW2 and the discovery of the Holocaust, the UN took swift action to draw up borders for the new Jewish state of Israel. However, like many borders drawn up in the middle east during this time, western powers failed to consider the actual demographics they would be dividing up. Suddenly, the majority Palestinian population were now minorities in a foreign land, and the new Jewish government had to contend with a large population ethnically and religiously different from themselves.";
+    var layer2 = "Not everyone agreed to this new Jewish state, particularly its Arab neighbors. A series of violent exchanges between anti-Israel and Zionist forces eventually evolved into all out war. During this time, Israel led an incredibly effective offensive campaign which resulted in them occupying a great deal more territory allocated to them in the previous partition. Palestinians in the occupied areas were forced to flee in the hundreds of thousands, an event that is still remembered as the Nakba. Although these are where the official borders stand today, this map does not completely represent actual details on the ground. The present map looks more like our next one.";
+
+    var currentLayer = layer1;
  
  //begin script when window loads
  window.onload = setMap();
@@ -137,13 +142,19 @@
              })
              .attr("d", path)
              .style("fill", function (d) {
-                 var value = d.properties[expressed];
-                 if (value = "Arab State") {
-                     return "#ffccff";
-                 } else if (value = "Jewish State"){
-                     return "#99ffcc";
-                 } else if (value = "Water") {return "#99ccff";}
-                 else if (value = "Corpus Separatum") {return "#ccc"}
+                 var value = d.properties.PlanUse;
+                //  if (value === "Arab_State") {
+                //      return "rgb(100,215,150)";
+                //  } else if (value === "Jewish_State"){
+                //      return "rgb(20,100,255)";
+                //  } else if (value === "Water") {return "rgb(0,255,255)";}
+                //  else if (value === "Corpus Separatum") {return "rgb(210,20,20)"}
+                if (value) {
+                    return "#F5F5DC";
+                }
+                else {
+                    return;
+                }
              })
              .on("mouseover", function(event, d){
                  highlight(d.properties);
@@ -171,13 +182,13 @@
                      .on("change", function () {
                          changeAttribute(this.value, csvData);
                      });
-         
-                 //add initial option
-                 var titleOption = dropdown
-                     .append("option")
-                     .attr("class", "titleOption")
-                     .attr("disabled", "true")
-                     .text("Select Attribute");
+                
+                //add initial option
+                var titleOption = dropdown
+                .append("option")
+                .attr("class", "titleOption")
+                .attr("disabled", "true")
+                .text("Select Map");
          
                  //add attribute name options
                  var attrOptions = dropdown
@@ -196,22 +207,49 @@
          function changeAttribute(attribute, csvData) {
              //change the expressed attribute
              expressed = attribute;
-         
-             //recolor enumeration units
-             var armisticelayer = d3.selectAll(".boundaries")
-             .transition()
-             .duration(1000)
-             .style("fill", function (d) {
-                 var value = d.properties[expressed];
-                 if (value = "Arab State") {
-                     return "#ffccff";
-                 } else if (value = "Jewish State"){
-                     return "#99ffcc";
-                 } else if (value = "Water") {return "#99ccff";}
-                 else if (value = "Corpus Separatum") {return "#ccc"}
-             });
+
+            if (expressed === "UN Partition Plan") {
+                //recolor enumeration units
+                var armisticelayer = d3.selectAll(".boundaries")
+                .transition()
+                .duration(1000)
+                .style("fill", function (d) {
+                    var value = d.properties.PlanUse;
+                    if (value === "Arab_State") {
+                        return "rgb(100,215,150)";
+                    } else if (value === "Jewish_State"){
+                        return "rgb(20,100,255)";
+                    } else if (value === "Water") {return "rgb(0,255,255)";}
+                    else if (value === "Corpus Separatum") {return "rgb(210,20,20)"}
+                })
+                setInfoLayer(layer1);
+            }
+            else if (expressed === "1949 Armistice") {
+                //recolor enumeration units
+                var armisticelayer = d3.selectAll(".boundaries")
+                .transition()
+                .duration(1000)
+                .style("fill", function (d) {
+                    var value = d.properties.Armistice;
+                    if (value === "Egypt and Jordan") {
+                        return "rgb(100,215,150)";
+                    } else if (value === "Israel"){
+                        return "rgb(20,100,255)";
+                    } else if (value === "Water") {return "rgb(0,255,255)";}
+                    else if (value === "Corpus Separatum") {return "rgb(210,20,20)"}
+                });
+                setInfoLayer(layer2);
+            };
          
          };
+
+         //adds information text to the screen
+         function setInfoLayer(newInfoLayer) {
+            currentLayer = newInfoLayer;
+            var infoText = document.getElementById("infoText");
+            console.log(currentLayer);
+            infoText.innerText = currentLayer;
+         }
          
         
          
