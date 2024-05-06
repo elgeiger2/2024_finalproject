@@ -184,7 +184,7 @@
                      });
                 
                 //add initial option
-                var titleOption = dropdown
+                var titleOption = dropdown      //TODO: Figure out how to have dropdown start with "Selet Map then disappear after selection"
                 .append("option")
                 .attr("class", "titleOption")
                 .attr("disabled", "true")
