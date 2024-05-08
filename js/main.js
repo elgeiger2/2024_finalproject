@@ -24,7 +24,6 @@
   .select("body")
   .append("svg")
   .attr("class", "map")
-  .attr("width", width)
   .attr("height", height);
  
   //create Albers equal area conic projection centered on France
@@ -55,21 +54,15 @@
          boundaries = data[2];
  
      //translate TopoJSON
-     var countryBound = topojson.feature(countries, countries.objects.Countries2),
+     var countryBound = topojson.feature(countries, countries.objects.Countries2).features,
          armBound = topojson.feature(boundaries, boundaries.objects.Boundaries).features;
  
  
          setGraticule(map,path)
  
-         var countrieslayer = map.append("path")
-             .datum(countryBound)
-             .attr("class", "countrieslayer")
-             .attr("d", path);
- 
- 
          armBound = joinData(armBound, csvData);
  
-         setEnumerationUnits(armBound,map,path);
+         setEnumerationUnits(armBound,map,path, countryBound);
  
          createDropdown(csvData);
  
@@ -130,7 +123,36 @@
          
      
          
-         function setEnumerationUnits(armBound, map, path){
+         function setEnumerationUnits(armBound, map, path, countries){
+
+            var countrieslayer = map
+            .selectAll(".countries")
+            .data(countries)
+            .enter()
+            .append("path")
+            .attr("class", function(d){
+                return "countries " + d.properties.NAME_EN;
+            })
+            .attr("d", path)
+            .style("fill", function(d){
+                var value = d.properties.NAME_EN;
+                if (value) {
+                    return "#808080";
+                }
+                else {
+                    return;
+                }
+            })
+            .on("mouseover", function(event, d){
+                highlight(d.properties);
+            })
+            .on("mouseout", function(event, d){
+                dehighlight(d.properties);
+            })
+            .on("mousemove", moveLabel);
+
+            var desc = countrieslayer.append("desc")
+            .text('{"stroke": "#000", "stroke-width": "0.5px"}');
          
              var armisticelayer = map
              .selectAll(".boundaries")
@@ -184,7 +206,7 @@
                      });
                 
                 //add initial option
-                var titleOption = dropdown      //TODO: Figure out how to have dropdown start with "Selet Map then disappear after selection"
+                var titleOption = dropdown      
                 .append("option")
                 .attr("class", "titleOption")
                 .attr("disabled", "true")
@@ -257,7 +279,8 @@
          function highlight(props){
              //change stroke
              var selected = d3
-                 .selectAll("." + props.NAME )
+                 .selectAll("." + props.NAME)
+                 .selectAll("." + props.NAME_EN)
                  .style("stroke", "black")
                  .style("stroke-width", "2.5");
          
@@ -266,7 +289,7 @@
          
          //function to reset the element style on mouseout
          function dehighlight(props){
-             var selected = d3.selectAll("." + props.NAME)
+             var selected = d3.selectAll("." + props.NAME).selectAll("." + props.NAME_EN)
                  .style("stroke", function(){
                      return getStyle(this, "stroke")
                  })
@@ -293,8 +316,17 @@
             
              if (expressed === "UN Partition Plan" ) {
                 if (props.PlanUse === "Water"){
-                    var labelAttribute = "<h1> Water </h1>";
+                    if (props.NAME === "Bound11") {
+                        var labelAttribute = "<h1> Sea of Galilee </h1>";
+                    }
+                    if (props.NAME === "Bound3") {
+                        var labelAttribute = "<h1> Dead Sea </h1>";
+                    }
+                    
                 }
+                else if (props.NAME_EN) {
+                    var labelAttribute = "<h1>" + props.NAME_EN + "</h1>";
+                 }
                 else if (props.PlanUse === "Jewish_State"){
                     var labelAttribute = "<b>" + expressed +
                     ": </b> <p>Assigned to Jewish State" ;
@@ -308,8 +340,16 @@
 
              else if (expressed === "1949 Armistice" ) {
                 if (props.Armistice === "Water"){ 
-                    var labelAttribute = "<h1> Water </h1>";
+                    if (props.NAME === "Bound11") {
+                        var labelAttribute = "<h1> Sea of Galilee </h1>";
+                    }
+                    if (props.NAME === "Bound3") {
+                        var labelAttribute = "<h1> Dead Sea </h1>";
+                    }
                 }
+                else if (props.NAME_EN) {
+                    var labelAttribute = "<h1>" + props.NAME_EN + "</h1>";
+                 }
                 else {
                 var labelAttribute = "<p><b>" + expressed +
                 ": </b><p>Assigned to " + props.Armistice ; 
