@@ -147,7 +147,7 @@
                 //      return "rgb(100,215,150)";
                 //  } else if (value === "Jewish_State"){
                 //      return "rgb(20,100,255)";
-                //  } else if (value === "Water") {return "rgb(0,255,255)";}
+                //  } else if (value === "Water") {return "rgb(188, 230, 255)";}
                 //  else if (value === "Corpus Separatum") {return "rgb(210,20,20)"}
                 if (value) {
                     return "#F5F5DC";
@@ -188,7 +188,7 @@
                 .append("option")
                 .attr("class", "titleOption")
                 .attr("disabled", "true")
-                .text("Select Map");
+                .text("SELECT MAP");
          
                  //add attribute name options
                  var attrOptions = dropdown
@@ -216,11 +216,11 @@
                 .style("fill", function (d) {
                     var value = d.properties.PlanUse;
                     if (value === "Arab_State") {
-                        return "rgb(100,215,150)";
+                        return "rgb(255, 255, 187)";
                     } else if (value === "Jewish_State"){
-                        return "rgb(20,100,255)";
-                    } else if (value === "Water") {return "rgb(0,255,255)";}
-                    else if (value === "Corpus Separatum") {return "rgb(210,20,20)"}
+                        return "rgb(255, 195, 193)";
+                    } else if (value === "Water") {return "rgb(188, 230, 255)";}
+                    else if (value === "Corpus Separatum") {return "rgb(91, 122, 92)"}
                 })
                 setInfoLayer(layer1);
             }
@@ -232,11 +232,11 @@
                 .style("fill", function (d) {
                     var value = d.properties.Armistice;
                     if (value === "Egypt and Jordan") {
-                        return "rgb(100,215,150)";
+                        return "rgb(255, 255, 187)";
                     } else if (value === "Israel"){
-                        return "rgb(20,100,255)";
-                    } else if (value === "Water") {return "rgb(0,255,255)";}
-                    else if (value === "Corpus Separatum") {return "rgb(210,20,20)"}
+                        return "rgb(255, 195, 193)";
+                    } else if (value === "Water") {return "rgb(188, 230, 255)";}
+                    else if (value === "Corpus Separatum") {return "rgb(91, 122, 92)"}
                 });
                 setInfoLayer(layer2);
             };
@@ -258,7 +258,7 @@
              //change stroke
              var selected = d3
                  .selectAll("." + props.NAME )
-                 .style("stroke", "white")
+                 .style("stroke", "black")
                  .style("stroke-width", "2.5");
          
              setLabel(props);
@@ -291,9 +291,31 @@
          function setLabel(props){
              //label content
             
-             var labelAttribute = "<p><h1>" + props[expressed] +
-                 "</h1><b>" + expressed + "</b>";
-         
+             if (expressed === "UN Partition Plan" ) {
+                if (props.PlanUse === "Water"){
+                    var labelAttribute = "<h1> Water </h1>";
+                }
+                else if (props.PlanUse === "Jewish_State"){
+                    var labelAttribute = "<b>" + expressed +
+                    ": </b> <p>Assigned to Jewish State" ;
+                }
+                else if (props.PlanUse === "Arab_State"){
+                    var labelAttribute = "<b>" + expressed +
+                    ": </b> <p>Assigned to Arab State" ;
+                }
+                else {var labelAttribute = "<b>" + expressed + ": </b> <p> Assigned to " + props.PlanUse}
+             }
+
+             else if (expressed === "1949 Armistice" ) {
+                if (props.Armistice === "Water"){ 
+                    var labelAttribute = "<h1> Water </h1>";
+                }
+                else {
+                var labelAttribute = "<p><b>" + expressed +
+                ": </b><p>Assigned to " + props.Armistice ; 
+                }
+             }; 
+
              //create info label div
              var infolabel = d3.select("body")
                  .append("div")

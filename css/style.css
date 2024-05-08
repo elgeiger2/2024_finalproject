@@ -20,7 +20,7 @@
 }
 
 .gratBackground {
-    fill: #D5E3FF;
+    fill: rgb(188, 230, 255);
 }
 
 .map {
@@ -33,11 +33,11 @@
     top: 150px;
     left: 280px;
     z-index: 10;
-    font-family: sans-serif;
+    font-family:  sans-serif;
     font-size: 2em;
     font-weight: bold;
     padding: 2px;
-    border: 1px solid #999;
+    border: 2px solid #999;
     box-shadow: 1px 1px 2px #999;
 }
 
@@ -96,6 +96,7 @@
 
 .title-bar-title {
     color: #D5E3FF;
-    font-size: x-large;
+    font-size: 40pt;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding-top: 20px;
 }
