@@ -14,6 +14,11 @@
     fill:beige
 }
 
+.settlements {
+    stroke:#000;
+    fill:blue
+
+}
 /* .gratLines {
     fill: none;
     stroke: #999;

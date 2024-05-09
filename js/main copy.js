@@ -1,11 +1,12 @@
 (function(){
 
     //pseudo-global variables
-    var attrArray = ["UN Partition Plan", "1949 Armistice"]; //list of attributes
+    var attrArray = ["UN Partition Plan", "1949 Armistice", "Present Day"]; //list of attributes
     var expressed = attrArray[0]; //initial attribute
 
     var layer1 = "After the conclusion of WW2 and the discovery of the Holocaust, the UN took swift action to draw up borders for the new Jewish state of Israel. However, like many borders drawn up in the middle east during this time, western powers failed to consider the actual demographics they would be dividing up. Suddenly, the majority Palestinian population were now minorities in a foreign land, and the new Jewish government had to contend with a large population ethnically and religiously different from themselves.";
     var layer2 = "Not everyone agreed to this new Jewish state, particularly its Arab neighbors. A series of violent exchanges between anti-Israel and Zionist forces eventually evolved into all out war. During this time, Israel led an incredibly effective offensive campaign which resulted in them occupying a great deal more territory allocated to them in the previous partition. Palestinians in the occupied areas were forced to flee in the hundreds of thousands, an event that is still remembered as the Nakba. Although these are where the official borders stand today, this map does not completely represent actual details on the ground. The present map looks more like our next one.";
+    var layer3 = "Text";
 
     var currentLayer = layer1;
  
@@ -43,12 +44,14 @@
          d3.csv("data/arm_Data.csv"),
          d3.json("data/Countries2.topojson"),
          d3.json("data/Armistice.topojson"),
-         d3.json("data/WestBankSettlements.geojson")
+         d3.json("data/WestBankSettlements.geojson"),
+        
         
      ];
      Promise.all(promises).then(callback);
  
-     
+    
+
  
  function callback(data) {
      var csvData = data[0],
@@ -264,7 +267,31 @@
                     else if (value === "Corpus Separatum") {return "rgb(91, 122, 92)"}
                 });
                 setInfoLayer(layer2);
-            };
+            }
+            else if (expressed === "Present Day"){
+                //recolor
+                var armisticelayer = d3.selectAll(".boundaries")
+                .transition()
+                .duration()
+                .style("fill", function (d) { 
+                    var value = d.properties.Armistice;
+                    if (value) {
+                        return "#FFEBCD";
+                    }
+                    else {
+                        return;
+                    }
+                    });
+                
+                //place settlements
+                var settlementlayer = d3.selectAll(".settlements")
+                .transition()
+                .duration(1000);
+
+                setInfoLayer(layer3)
+
+            }
+    
          
          };
 
@@ -366,9 +393,7 @@
                  .attr("id", props.NAME + "_label")
                  .html(labelAttribute);
          
-             var countyName = infolabel.append("div")
-                 .attr("class", "labelname")
-                 .html(props.name);
+            
          };
          
          //function to move info label with mouse
