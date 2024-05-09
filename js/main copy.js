@@ -45,6 +45,7 @@
          d3.json("data/Countries2.topojson"),
          d3.json("data/Armistice.topojson"),
          d3.json("data/WestBankSettlements.geojson"),
+         d3.json ("data/PalestinianCommunities.geojson"),
         
         
      ];
@@ -57,7 +58,9 @@
      var csvData = data[0],
          countries = data[1],
          boundaries = data[2],
-         settlements = data[3];
+         settlements = data[3], //West Bank settlements; scale by population
+         communities = data [4]; //Palestinian communities data; scale by population, recolor by dependence on Israel? - might get cluttered
+
  
      //translate TopoJSON
      var countryBound = topojson.feature(countries, countries.objects.Countries2).features,
@@ -71,32 +74,12 @@
          setEnumerationUnits(armBound,map,path, countryBound);
  
          createDropdown(csvData);
+
+         addSettlements(settlements, map, path)
  
          };
  
      };
- 
-     function setGraticule(map, path){
-         //create graticule generator
-         var graticule = d3.geoGraticule()
-         .step([2, 2]); //place graticule lines every 5 degrees of longitude and latitude
-         
-          //create graticule background
-          var gratBackground = map.append("path")
-          .datum(graticule.outline()) //bind graticule background
-          .attr("class", "gratBackground") //assign class for styling
-          .attr("d", path) //project graticule
-         
-           
-            
-         //create graticule lines
-         var gratLines = map.selectAll(".gratLines") //select graticule elements that will be created
-           .data(graticule.lines()) //bind graticule lines to each element to be created
-           .enter() //create an element for each datum
-           .append("path") //append each element to the svg as a path element
-           .attr("class", "gratLines") //assign class for styling
-           .attr("d", path); //project graticule lines
-         };
          
          function joinData(armBound, csvData){
               //variables for data join
@@ -197,7 +180,18 @@
             
          };
   
-         
+         //function to add Israel West Bank Settlements
+         function addSettlements(settlements, map, path){
+
+
+         };
+
+
+         //function to calculate proportional symbols
+         function createPropSymbols(settlements){
+
+         };
+
          
          //function to create a dropdown menu for attribute selection
            
@@ -232,7 +226,7 @@
                      });
              };
          
-         function changeAttribute(attribute, csvData) {
+         function changeAttribute(attribute, csvData, settlements) {
              //change the expressed attribute
              expressed = attribute;
 
@@ -244,11 +238,11 @@
                 .style("fill", function (d) {
                     var value = d.properties.PlanUse;
                     if (value === "Arab_State") {
-                        return "rgb(255, 255, 187)";
+                        return "rgb(131,221,133)";
                     } else if (value === "Jewish_State"){
-                        return "rgb(255, 195, 193)";
+                        return "rgb(100,137,173)";
                     } else if (value === "Water") {return "rgb(188, 230, 255)";}
-                    else if (value === "Corpus Separatum") {return "rgb(91, 122, 92)"}
+                    else if (value === "Corpus Separatum") {return "rgb(236,255,169)"}
                 })
                 setInfoLayer(layer1);
             }
@@ -260,11 +254,11 @@
                 .style("fill", function (d) {
                     var value = d.properties.Armistice;
                     if (value === "Egypt and Jordan") {
-                        return "rgb(255, 255, 187)";
+                        return "rgb(131,221,133)";
                     } else if (value === "Israel"){
-                        return "rgb(255, 195, 193)";
+                        return "rgb(100,137,173)";
                     } else if (value === "Water") {return "rgb(188, 230, 255)";}
-                    else if (value === "Corpus Separatum") {return "rgb(91, 122, 92)"}
+                    else if (value === "Corpus Separatum") {return "rgb(236,255,169)"}
                 });
                 setInfoLayer(layer2);
             }
@@ -272,10 +266,13 @@
                 //recolor
                 var armisticelayer = d3.selectAll(".boundaries")
                 .transition()
-                .duration()
+                .duration(1000)
                 .style("fill", function (d) { 
                     var value = d.properties.Armistice;
-                    if (value) {
+                    if (value === "Water"){
+                        return "rgb(188, 230, 255)";
+                    }
+                    else if (value) {
                         return "#FFEBCD";
                     }
                     else {
@@ -384,6 +381,20 @@
                 var labelAttribute = "<b>" + expressed +
                 ": </b> <p> Assigned to " + props.Armistice ; 
                 }
+             }
+
+             else if (expressed === "Present Day") {
+                if (props.Armistice === "Water"){
+                    if (props.NAME === "Bound11") {
+                        var labelAttribute = "<h1> Sea of Galilee </h1>";
+                    }
+                    if (props.NAME === "Bound3") {
+                        var labelAttribute = "<h1> Dead Sea </h1>";
+                    }
+                }
+                else if (props.NAME_EN) {
+                    var labelAttribute = "<h1>" + props.NAME_EN + "</h1>";
+                 }
              }
 
              //create info label div
