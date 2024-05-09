@@ -24,6 +24,7 @@
   .select("body")
   .append("svg")
   .attr("class", "map")
+  .attr("width", width)
   .attr("height", height);
  
   //create Albers equal area conic projection centered on France
@@ -58,7 +59,7 @@
          armBound = topojson.feature(boundaries, boundaries.objects.Boundaries).features;
  
  
-         setGraticule(map,path)
+        //  setGraticule(map,path)
  
          armBound = joinData(armBound, csvData);
  
@@ -137,7 +138,7 @@
             .style("fill", function(d){
                 var value = d.properties.NAME_EN;
                 if (value) {
-                    return "#808080";
+                    return " #FSDE83";
                 }
                 else {
                     return;
@@ -172,7 +173,7 @@
                 //  } else if (value === "Water") {return "rgb(188, 230, 255)";}
                 //  else if (value === "Corpus Separatum") {return "rgb(210,20,20)"}
                 if (value) {
-                    return "#F5F5DC";
+                    return "#FFEBCD";
                 }
                 else {
                     return;
@@ -351,10 +352,10 @@
                     var labelAttribute = "<h1>" + props.NAME_EN + "</h1>";
                  }
                 else {
-                var labelAttribute = "<p><b>" + expressed +
-                ": </b><p>Assigned to " + props.Armistice ; 
+                var labelAttribute = "<b>" + expressed +
+                ": </b> <p> Assigned to " + props.Armistice ; 
                 }
-             }; 
+             }
 
              //create info label div
              var infolabel = d3.select("body")

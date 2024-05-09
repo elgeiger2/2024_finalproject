@@ -7,26 +7,27 @@
     fill:beige
 }
 
-.gratLines {
+.countries {
+    stroke: #000;
+    stroke-width: 0.5px;
+    stroke-linecap: round;
+    fill:beige
+}
+
+/* .gratLines {
     fill: none;
     stroke: #999;
     stroke-width: 1px;
-}
+} */
 
-.countrieslayer {
-    fill: #d5d5d5;
-    stroke: #000;
-    stroke-width: 0.5px;
-}
-
-.gratBackground {
+/* .gratBackground {
     fill: rgb(188, 230, 255);
-}
+} */
 
 .map {
     border: medium solid #000000;
     margin: 70px 0 0 30px;
-    width: 50%;
+    background-color: rgb(188, 230, 255);
 }
 
 .infolabel {
