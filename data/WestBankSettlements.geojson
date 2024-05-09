@@ -1,0 +1,1955 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Adora, Har Hevron",
+        "Population": 515,
+        "Established": 1984
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0189,
+          31.5522
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Alei Zahav",
+        "Population": "4,647",
+        "Established": 1982
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0642,
+          32.0717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Alfei Menashe",
+        "Population": "7,975",
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.015,
+          32.1717
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Almog",
+        "Population": 236,
+        "Established": 1977
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4611,
+          31.7897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Almon",
+        "Population": "1,467",
+        "Established": 1982
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2954,
+          31.8317
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Alon",
+        "Population": "1,031",
+        "Established": 1990
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.3537,
+          31.8328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Alon Shvut",
+        "Population": "3,046",
+        "Established": 1970
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1278,
+          31.6547
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Amihai",
+        "Population": 209,
+        "Established": 2018
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.327778,
+          32.045833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ariel",
+        "Population": "20,500",
+        "Established": 1978
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1878,
+          32.1061
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Argaman",
+        "Population": 131,
+        "Established": 1968
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.5219,
+          32.1725
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Metzad",
+        "Population": "1,228",
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1872,
+          31.5858
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ateret",
+        "Population": 891,
+        "Established": 1981
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1769,
+          31.9997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ovnat",
+        "Population": 249,
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4368,
+          31.6792
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Avnei Hefetz",
+        "Population": "2,363",
+        "Established": 1990
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.074,
+          32.2846
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Barkan",
+        "Population": "2,040",
+        "Established": 1981
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1057,
+          32.1075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Bat Ayin",
+        "Population": "1,730",
+        "Established": 1989
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1023,
+          31.6572
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Beitar Illit",
+        "Population": 64016,
+        "Established": 1985
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1153,
+          31.6978
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Beit Aryeh-Ofarim",
+        "Population": "5,517",
+        "Established": 1981
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0538,
+          32.0355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Beit El",
+        "Population": "6,108",
+        "Established": 1977
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.222,
+          31.942
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Beit HaArava",
+        "Population": 508,
+        "Established": 1980
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4758,
+          31.8082
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Beit Horon",
+        "Population": "1,442",
+        "Established": 1977
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1287,
+          31.8767
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Beit Yatir",
+        "Population": 696,
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1122,
+          31.3656
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Beka'ot",
+        "Population": 187,
+        "Established": 1972
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4527,
+          32.2421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Brukhin",
+        "Population": "2,412",
+        "Established": 2012
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0861,
+          32.0804
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Carmel",
+        "Population": 465,
+        "Established": 1981
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1836,
+          31.4317
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Dolev",
+        "Population": "1,613",
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1352,
+          31.9259
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Efrat",
+        "Population": "11,853",
+        "Established": 1980
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.15,
+          31.658
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Elazar",
+        "Population": "2,615",
+        "Established": 1975
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.142,
+          31.66
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Eli",
+        "Population": "4,701",
+        "Established": 1984
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2653,
+          32.0714
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Elkana",
+        "Population": "4,301",
+        "Established": 1977
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0343,
+          32.11
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Elon Moreh",
+        "Population": "2,105",
+        "Established": 1979
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.3313,
+          32.2339
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Einav",
+        "Population": "1,062",
+        "Established": 1981
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.126,
+          32.2844
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Eshkolot",
+        "Population": 623,
+        "Established": 1982
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.9047,
+          31.3908
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Etz Efraim",
+        "Population": "",
+        "Established": 1985
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0466,
+          32.1189
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Modi'in Illit",
+        "Population": "2,603",
+        "Established": 1985
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0429,
+          31.9333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Geva Binyamin",
+        "Population": "5,913",
+        "Established": 1984
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2738,
+          31.85
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Gilgal",
+        "Population": 229,
+        "Established": 1970
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4444,
+          31.9997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Gitit",
+        "Population": 502,
+        "Established": 1973
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.396,
+          32.1011
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Giv'at Ze'ev",
+        "Population": "21,097",
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1697,
+          31.8642
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Giv'on HaHadasha",
+        "Population": 996,
+        "Established": 1980
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1576,
+          31.8487
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Beit Hagai",
+        "Population": 725,
+        "Established": 1984
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0808,
+          31.4931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Halamish",
+        "Population": "1,485",
+        "Established": 1977
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1272,
+          32.0081
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hamra",
+        "Population": 224,
+        "Established": 1971
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4349,
+          32.199
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Har Adar",
+        "Population": "4,065",
+        "Established": 1986
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1297,
+          31.8261
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Har Brakha",
+        "Population": "3,165",
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2653,
+          32.1928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Har Gilo",
+        "Population": "1,655",
+        "Established": 1972
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1715,
+          31.7221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hashmonaim",
+        "Population": "2,589",
+        "Established": 1985
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0216,
+          31.931
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hemdat",
+        "Population": 361,
+        "Established": 1980
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.5263,
+          32.2514
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hermesh",
+        "Population": 245,
+        "Established": 1982
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1192,
+          32.4233
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Hinanit",
+        "Population": "1,659",
+        "Established": 1981
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1721,
+          32.4803
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Immanuel",
+        "Population": "4,656",
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1372,
+          32.1619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Itamar",
+        "Population": "1,470",
+        "Established": 1984
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.3083,
+          32.1742
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Kalya",
+        "Population": 490,
+        "Established": 1968
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4662,
+          31.7486
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Karmei Tzur",
+        "Population": 980,
+        "Established": 1984
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1014,
+          31.6092
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Karnei Shomron",
+        "Population": "9,920",
+        "Established": 1978
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0977,
+          32.1716
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Kedar",
+        "Population": "1,649",
+        "Established": 1985
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.3094,
+          31.7555
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Kedumim",
+        "Population": "4,548",
+        "Established": 1977
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1578,
+          32.2119
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Kfar Adumim",
+        "Population": "4,957",
+        "Established": 1979
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.335,
+          31.824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Kfar Etzion",
+        "Population": "1,371",
+        "Established": 1967
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1167,
+          31.65
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Kfar HaOranim",
+        "Population": "2,604",
+        "Established": 1998
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0382,
+          31.9193
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Kfar Tapuach",
+        "Population": "1,639",
+        "Established": 1978
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.25,
+          32.1181
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Kiryat Arba",
+        "Population": "7,490",
+        "Established": 1972
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1186,
+          31.5283
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Kiryat Netafim",
+        "Population": "1,009",
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1135,
+          32.116
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Kokhav HaShahar",
+        "Population": "2,501",
+        "Established": 1977
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.348,
+          31.96
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Kokhav Ya'akov",
+        "Population": "9,794",
+        "Established": 1985
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2457,
+          31.8802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ma'ale Adumim",
+        "Population": "38,046",
+        "Established": 1975
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2647,
+          31.775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ma'ale Amos",
+        "Population": 906,
+        "Established": 1981
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2296,
+          31.5965
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ma'ale Efrayim",
+        "Population": "1,377",
+        "Established": 1970
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4036,
+          32.0704
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ma'ale Levona",
+        "Population": "1,018",
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2408,
+          32.0544
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ma'ale Mikhmas",
+        "Population": "1,744",
+        "Established": 1981
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.3064,
+          31.8789
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ma'ale Shomron",
+        "Population": "",
+        "Established": 1980
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0711,
+          32.1647
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ma'on, Har Hevron",
+        "Population": 607,
+        "Established": 1981
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1639,
+          31.4133
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Maskiot",
+        "Population": 343,
+        "Established": 1986
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.5022,
+          32.3174
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Masua",
+        "Population": 297,
+        "Established": 1970
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4908,
+          32.113
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Matityahu",
+        "Population": 920,
+        "Established": 1981
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0344,
+          31.9297
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Mehola",
+        "Population": 688,
+        "Established": 1968
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.515,
+          32.3661
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Mekhora",
+        "Population": 179,
+        "Established": 1973
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4237,
+          32.1647
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Mevo Dotan",
+        "Population": 612,
+        "Established": 1978
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1695,
+          32.4201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Mevo Horon",
+        "Population": "2,669",
+        "Established": 1970
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0359,
+          31.8492
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Migdal Oz",
+        "Population": 572,
+        "Established": 1977
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1439,
+          31.6407
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Migdalim",
+        "Population": 592,
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.3423,
+          32.0902
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Mitzpe Shalem",
+        "Population": 243,
+        "Established": 1971
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4009,
+          31.5684
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Mitzpe Yeriho",
+        "Population": "2,657",
+        "Established": 1978
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.3941,
+          31.816
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Modi'in Illit",
+        "Population": "83,356",
+        "Established": 1996
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0429,
+          31.9333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Na'ale",
+        "Population": "2,839",
+        "Established": 1988
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0641,
+          31.9625
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Na'omi",
+        "Population": 165,
+        "Established": 1982
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4672,
+          31.9063
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Nahliel",
+        "Population": 743,
+        "Established": 1984
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1401,
+          31.974
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Negohot",
+        "Population": 514,
+        "Established": 1999
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.9833,
+          31.4928
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Netiv HaGdud",
+        "Population": 214,
+        "Established": 1976
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4448,
+          31.9882
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Neve Daniel",
+        "Population": "2,354",
+        "Established": 1982
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1433,
+          31.6779
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Nili",
+        "Population": "2,059",
+        "Established": 1981
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0475,
+          31.9637
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Na'aran",
+        "Population": 101,
+        "Established": 1977
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.454444,
+          31.966944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Nofei Prat",
+        "Population": "1,200",
+        "Established": 1992
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.3201,
+          31.824
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Nofim",
+        "Population": "1,174",
+        "Established": 1987
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1028,
+          32.1539
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Nokdim",
+        "Population": "3,094",
+        "Established": 1982
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2447,
+          31.6439
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ofra",
+        "Population": "3,497",
+        "Established": 1975
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2602,
+          31.9555
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Oranit",
+        "Population": "9,295",
+        "Established": 1985
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.9952,
+          32.1293
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Otniel",
+        "Population": "1,041",
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0289,
+          31.4397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Peduel",
+        "Population": "2,084",
+        "Established": 1984
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0519,
+          32.0624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ma'ale Hever",
+        "Population": 743,
+        "Established": 1982
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1661,
+          31.4861
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Petza'el",
+        "Population": 371,
+        "Established": 1975
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4422,
+          32.0442
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Psagot",
+        "Population": "2,086",
+        "Established": 1981
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2239,
+          31.8993
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Rehelim",
+        "Population": "1,062",
+        "Established": 2013
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2572,
+          32.1029
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Reihan",
+        "Population": 408,
+        "Established": 1977
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.135,
+          32.4689
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Revava",
+        "Population": "2,950",
+        "Established": 1991
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1287,
+          32.1188
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Rimonim",
+        "Population": 707,
+        "Established": 1977
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.34,
+          31.9342
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Ro'i",
+        "Population": 170,
+        "Established": 1976
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.489,
+          32.2472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Rosh Tzurim",
+        "Population": 978,
+        "Established": 1969
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1257,
+          31.6671
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Rotem",
+        "Population": 275,
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.5167,
+          32.3333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sal'it",
+        "Population": "1,450",
+        "Established": 1977
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0519,
+          32.2426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sansana",
+        "Population": 716,
+        "Established": 1997
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.9029,
+          31.3619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Sha'arei Tikva",
+        "Population": "",
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0269,
+          32.1229
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Shadmot Mehola",
+        "Population": 702,
+        "Established": 1979
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.5333,
+          32.3483
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Shaked",
+        "Population": "1,128",
+        "Established": 1981
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.169,
+          32.4732
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Livne",
+        "Population": 571,
+        "Established": 1989
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0701,
+          31.3558
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Shavei Shomron",
+        "Population": "1,083",
+        "Established": 1977
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1849,
+          32.2641
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Shilo",
+        "Population": "5,072",
+        "Established": 1979
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2989,
+          32.0539
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Shim'a",
+        "Population": 938,
+        "Established": 1985
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0128,
+          31.3878
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Susya",
+        "Population": "1,602",
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1123,
+          31.3919
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Talmon",
+        "Population": "5,379",
+        "Established": 1989
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1353,
+          31.9383
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Teqoa",
+        "Population": "4,326",
+        "Established": 1977
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2144,
+          31.6364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Telem",
+        "Population": 540,
+        "Established": 1982
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0311,
+          31.5642
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Teneh Omarim",
+        "Population": 985,
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          34.9569,
+          31.3753
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tomer",
+        "Population": 310,
+        "Established": 1978
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4389,
+          32.0187
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Tzofim",
+        "Population": "2,553",
+        "Established": 1989
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.0092,
+          32.1981
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Vered Yeriho",
+        "Population": 377,
+        "Established": 1980
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4317,
+          31.8264
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Yafit",
+        "Population": 225,
+        "Established": 1980
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4741,
+          32.0615
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Yakir",
+        "Population": "2,586",
+        "Established": 1981
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.1154,
+          32.1503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Yitav",
+        "Population": 261,
+        "Established": 1970
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.4233,
+          31.9481
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Name": "Yitzhar",
+        "Population": "2,093",
+        "Established": 1983
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          35.2363,
+          32.1681
+        ]
+      }
+    }
+  ]
+}
