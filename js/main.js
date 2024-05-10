@@ -261,11 +261,11 @@
                 .style("fill", function (d) {
                     var value = d.properties.PlanUse;
                     if (value === "Arab_State") {
-                        return "rgb(255, 255, 187)";
+                        return "rgb(131,221,133)";
                     } else if (value === "Jewish_State"){
-                        return "rgb(255, 195, 193)";
+                        return "rgb(100,137,173)";
                     } else if (value === "Water") {return "rgb(188, 230, 255)";}
-                    else if (value === "Corpus Separatum") {return "rgb(91, 122, 92)"}
+                    else if (value === "Corpus Separatum") {return "rgb(236,255,169)"}
                 })
                 setInfoLayer(layer1);
             }
@@ -277,13 +277,15 @@
                 .style("fill", function (d) {
                     var value = d.properties.Armistice;
                     if (value === "Egypt and Jordan") {
-                        return "rgb(255, 255, 187)";
+                        return "rgb(131,221,133)";
                     } else if (value === "Israel"){
-                        return "rgb(255, 195, 193)";
+                        return "rgb(100,137,173)";
                     } else if (value === "Water") {return "rgb(188, 230, 255)";}
-                    else if (value === "Corpus Separatum") {return "rgb(91, 122, 92)"}
+                    else if (value === "Corpus Separatum") {return "rgb(236,255,169)"}
                 });
                 setInfoLayer(layer2);
+                
+                
             }
             else if (expressed === "Present Day") {
                 //recolor enumeration units
