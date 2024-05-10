@@ -10,9 +10,10 @@
 
     var currentLayer = layer1;
 
+    //initially hide legends
     document.getElementById('legend').style.visibility='hidden'
-            document.getElementById('legend2').style.visibility='hidden'
-            document.getElementById('legend3').style.visibility='hidden'
+    document.getElementById('legend2').style.visibility='hidden'
+    document.getElementById('legend3').style.visibility='hidden'
  
  //begin script when window loads
  window.onload = setMap();
@@ -66,7 +67,7 @@
  
          armBound = joinData(armBound, csvData);
  
-         setEnumerationUnits(armBound,map,path, countryBound, settlements);
+         setEnumerationUnits(armBound,map,path, countryBound);
  
          createDropdown(csvData, settlements, map, path);
  
@@ -125,7 +126,7 @@
             return armBound;
          };
          
-         function setSettlementUnits(settlements, map, path) {
+         function setSettlementUnits(settlements, map, path, countries) {
             var settlementsLayer = map
             .selectAll(".settlements")
             .data(settlements)
@@ -146,8 +147,12 @@
             })
             .on("mouseover", function(event, d){
                 highlight(d.properties);
+                map.data(countries);
+                highlight(d.properties);
             })
             .on("mouseout", function(event, d){
+                dehighlight(d.properties);
+                map.data(countries);
                 dehighlight(d.properties);
             })
             .on("mousemove", moveLabel);
@@ -156,7 +161,7 @@
             .text('{"stroke": "#000", "stroke-width": "0.5px"}');
          }
          
-         function setEnumerationUnits(armBound, map, path, countries, settlements){
+         function setEnumerationUnits(armBound, map, path, countries){
 
             var countrieslayer = map
             .selectAll(".countries")
@@ -294,7 +299,19 @@
             }
             else if (expressed === "Present Day") {
                 //recolor enumeration units
-                setSettlementUnits(settlements, map, path)
+                var armisticelayer = d3.selectAll(".boundaries")
+                .transition()
+                .duration(1000)
+                .style("fill", function (d) {
+                    var value = d.properties.Armistice;
+                    if (value === "Egypt and Jordan") {
+                        return "rgb(131,221,133)";
+                    } else if (value === "Israel"){
+                        return "rgb(100,137,173)";
+                    } else if (value === "Water") {return "rgb(188, 230, 255)";}
+                    else if (value === "Corpus Separatum") {return "rgb(236,255,169)"}
+                });
+                setSettlementUnits(settlements, map, path, armisticelayer);
                 var settlements = d3.selectAll(".settlements")
                 .transition()
                 .duration(1000)
@@ -428,6 +445,13 @@
                     if (props.NAME === "Bound3") {
                         var labelAttribute = "<h1> Dead Sea </h1>";
                     }
+                }
+                else if (props.NAME_EN) {
+                    var labelAttribute = "<h1>" + props.NAME_EN + "</h1>";
+                }
+                else if (props.Armistice) {
+                    var labelAttribute = "<b>" + expressed +
+                    ": </b> <p> Assigned to " + props.Armistice ; 
                 }
                 else {
                     var labelAttribute = "<h1>" + props.Name + "</h1>";
