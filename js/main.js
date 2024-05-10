@@ -64,7 +64,7 @@
  
          setEnumerationUnits(armBound,map,path, countryBound, settlements);
  
-         createDropdown(csvData);
+         createDropdown(csvData, settlements, map, path);
  
          };
  
@@ -121,7 +121,36 @@
             return armBound;
          };
          
-     
+         function setSettlementUnits(settlements, map, path) {
+            var settlementsLayer = map
+            .selectAll(".settlements")
+            .data(settlements)
+            .enter()
+            .append("path")
+            .attr("d", path)
+            .attr("class", function(d){
+                return "settlements " + d.properties.Name;
+            })
+            .style("fill", function(d){
+                var value = d.properties.Name;
+                if (value) {
+                    return " #FSDE83";
+                }
+                else {
+                    return;
+                }
+            })
+            .on("mouseover", function(event, d){
+                highlight(d.properties);
+            })
+            .on("mouseout", function(event, d){
+                dehighlight(d.properties);
+            })
+            .on("mousemove", moveLabel);
+
+            var desc = settlementsLayer.append("desc")
+            .text('{"stroke": "#000", "stroke-width": "0.5px"}');
+         }
          
          function setEnumerationUnits(armBound, map, path, countries, settlements){
 
@@ -183,49 +212,20 @@
              var desc = armisticelayer.append("desc")
              .text('{"stroke": "#000", "stroke-width": "0.5px"}');
 
-             var settlementsLayer = map
-             .selectAll(".settlements")
-             .data(settlements)
-             .enter()
-             .append("path")
-             .attr("d", path)
-             .attr("class", function(d){
-                 return "settlements " + d.properties.Name;
-             })
-             .style("fill", function(d){
-                 var value = d.properties.Name;
-                 if (value) {
-                     return " #FSDE83";
-                 }
-                 else {
-                     return;
-                 }
-             })
-             .on("mouseover", function(event, d){
-                 highlight(d.properties);
-             })
-             .on("mouseout", function(event, d){
-                 dehighlight(d.properties);
-             })
-             .on("mousemove", moveLabel);
- 
-             var desc = settlementsLayer.append("desc")
-             .text('{"stroke": "#000", "stroke-width": "0.5px"}');
-
          };
   
          
          
          //function to create a dropdown menu for attribute selection
            
-             function createDropdown(csvData) {
+             function createDropdown(csvData, settlements, map, path) {
                  //add select element
                  var dropdown = d3
                      .select("body")
                      .append("select")
                      .attr("class", "dropdown")
                      .on("change", function () {
-                         changeAttribute(this.value, csvData);
+                         changeAttribute(this.value, csvData, settlements, map, path);
                      });
                 
                 //add initial option
@@ -249,7 +249,7 @@
                      });
              };
          
-         function changeAttribute(attribute, csvData) {
+         function changeAttribute(attribute, csvData, settlements, map, path) {
              //change the expressed attribute
              expressed = attribute;
 
@@ -261,11 +261,11 @@
                 .style("fill", function (d) {
                     var value = d.properties.PlanUse;
                     if (value === "Arab_State") {
-                        return "rgb(255, 255, 187)";
+                        return "rgb(131,221,133)";
                     } else if (value === "Jewish_State"){
-                        return "rgb(255, 195, 193)";
+                        return "rgb(100,137,173)";
                     } else if (value === "Water") {return "rgb(188, 230, 255)";}
-                    else if (value === "Corpus Separatum") {return "rgb(91, 122, 92)"}
+                    else if (value === "Corpus Separatum") {return "rgb(236,255,169)"}
                 })
                 setInfoLayer(layer1);
             }
@@ -277,23 +277,24 @@
                 .style("fill", function (d) {
                     var value = d.properties.Armistice;
                     if (value === "Egypt and Jordan") {
-                        return "rgb(255, 255, 187)";
+                        return "rgb(131,221,133)";
                     } else if (value === "Israel"){
-                        return "rgb(255, 195, 193)";
+                        return "rgb(100,137,173)";
                     } else if (value === "Water") {return "rgb(188, 230, 255)";}
-                    else if (value === "Corpus Separatum") {return "rgb(91, 122, 92)"}
+                    else if (value === "Corpus Separatum") {return "rgb(236,255,169)"}
                 });
                 setInfoLayer(layer2);
             }
             else if (expressed === "Present Day") {
                 //recolor enumeration units
+                setSettlementUnits(settlements, map, path)
                 var settlements = d3.selectAll(".settlements")
                 .transition()
                 .duration(1000)
                 .style("fill", function (d) {
                     var value = d.properties.Name;
                     if (value) {
-                        return "rgb(255, 195, 193)";
+                        return "rgb(100,137,173)";
                     } 
                     else  {
                         return;
