@@ -284,6 +284,8 @@
                     else if (value === "Corpus Separatum") {return "rgb(236,255,169)"}
                 });
                 setInfoLayer(layer2);
+                
+                
             }
             else if (expressed === "Present Day") {
                 //recolor enumeration units
