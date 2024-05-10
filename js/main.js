@@ -1,11 +1,12 @@
 (function(){
 
     //pseudo-global variables
-    var attrArray = ["UN Partition Plan", "1949 Armistice"]; //list of attributes
+    var attrArray = ["UN Partition Plan", "1949 Armistice", "Present Day"]; //list of attributes
     var expressed = attrArray[0]; //initial attribute
 
     var layer1 = "After the conclusion of WW2 and the discovery of the Holocaust, the UN took swift action to draw up borders for the new Jewish state of Israel. However, like many borders drawn up in the middle east during this time, western powers failed to consider the actual demographics they would be dividing up. Suddenly, the majority Palestinian population were now minorities in a foreign land, and the new Jewish government had to contend with a large population ethnically and religiously different from themselves.";
     var layer2 = "Not everyone agreed to this new Jewish state, particularly its Arab neighbors. A series of violent exchanges between anti-Israel and Zionist forces eventually evolved into all out war. During this time, Israel led an incredibly effective offensive campaign which resulted in them occupying a great deal more territory allocated to them in the previous partition. Palestinians in the occupied areas were forced to flee in the hundreds of thousands, an event that is still remembered as the Nakba. Although these are where the official borders stand today, this map does not completely represent actual details on the ground. The present map looks more like our next one.";
+    var layer3 = "Israeli settlements are communities established by Jewish people throughout the West Bank in order to gain a majority population in strategic locations. Settlements first began to pop up in the late 1960s following the Six Day War in 1967. The Israeli government considers these settlements to be their right and treat their residents as Israeli citizens, but the settlements are considered illegal among much of the international community. While settlements are approved by the Israeli government, many more communities have been established without this approval; these are referred to as outposts. As of now, there are 147 settlements and 191 outposts in the West Bank. These settlements allow Israel to exert control over the land they consider to be rightfully theirs by establishing a Jewish majority among Palestinian communities. These settlements have become increasingly problematic since the beginning of the Israel-Hamas war, with settlers attacking Palestinians and damaging.";
 
     var currentLayer = layer1;
  
@@ -14,7 +15,6 @@
  
  //Example 1.3 line 4...set up choropleth map
  function setMap() {
- 
       //map frame dimensions
       var width = window.innerWidth * 0.4,
       height = 600;
@@ -36,8 +36,10 @@
  .translate([width / 2, height / 2]);
  
  var path = d3.geoPath()
- var path = d3.geoPath()
      .projection(projection);
+
+var longLatPoint = [31.5522, 35.0189];
+var projectedPoint = projection(longLatPoint);
  
      var promises = [
          d3.csv("data/arm_Data.csv"),
@@ -55,17 +57,22 @@
          countries = data[1],
          boundaries = data[2],
          settlements = data[3];
- 
+
+         console.log(boundaries)
      //translate TopoJSON
      var countryBound = topojson.feature(countries, countries.objects.Countries2).features,
          armBound = topojson.feature(boundaries, boundaries.objects.Boundaries).features;
- 
+        //  settlements = settlements.features;
  
         //  setGraticule(map,path)
+        var settlementsLayer = map.append("path")
+        .datum(settlements)
+        .attr("class", settlements)
+        .attr("d", path);
  
          armBound = joinData(armBound, csvData);
  
-         setEnumerationUnits(armBound,map,path, countryBound);
+         setEnumerationUnits(armBound,map,path, countryBound, settlements);
  
          createDropdown(csvData);
  
@@ -126,7 +133,7 @@
          
      
          
-         function setEnumerationUnits(armBound, map, path, countries){
+         function setEnumerationUnits(armBound, map, path, countries, settlements){
 
             var countrieslayer = map
             .selectAll(".countries")
@@ -168,12 +175,6 @@
              .attr("d", path)
              .style("fill", function (d) {
                  var value = d.properties.PlanUse;
-                //  if (value === "Arab_State") {
-                //      return "rgb(100,215,150)";
-                //  } else if (value === "Jewish_State"){
-                //      return "rgb(20,100,255)";
-                //  } else if (value === "Water") {return "rgb(188, 230, 255)";}
-                //  else if (value === "Corpus Separatum") {return "rgb(210,20,20)"}
                 if (value) {
                     return "#FFEBCD";
                 }
@@ -191,6 +192,35 @@
          
              var desc = armisticelayer.append("desc")
              .text('{"stroke": "#000", "stroke-width": "0.5px"}');
+
+            //  var settlementsLayer = map
+            //  .selectAll(".settlements")
+            //  .data(settlements)
+            //  .enter()
+            //  .append("path")
+            //  .attr("d", path)
+            //  .attr("class", function(d){
+            //      return "settlements " + d.properties.Name;
+            //  })
+            //  .style("fill", function(d){
+            //      var value = d.properties.Name;
+            //      if (value) {
+            //          return " #FSDE83";
+            //      }
+            //      else {
+            //          return;
+            //      }
+            //  })
+            //  .on("mouseover", function(event, d){
+            //      highlight(d.properties);
+            //  })
+            //  .on("mouseout", function(event, d){
+            //      dehighlight(d.properties);
+            //  })
+            //  .on("mousemove", moveLabel);
+ 
+            //  var desc = settlementsLayer.append("desc")
+            //  .text('{"stroke": "#000", "stroke-width": "0.5px"}');
             
          };
   
@@ -264,6 +294,23 @@
                     else if (value === "Corpus Separatum") {return "rgb(91, 122, 92)"}
                 });
                 setInfoLayer(layer2);
+            }
+            else if (expressed === "Present Day") {
+                //recolor enumeration units
+                console.log(true)
+                var settlements = d3.selectAll(".settlements")
+                .transition()
+                .duration(1000)
+                .style("fill", function (d) {
+                    var value = d.properties.Name;
+                    if (value) {
+                        return "rgb(255, 195, 193)";
+                    } 
+                    else  {
+                        return;
+                    }
+                });
+                setInfoLayer(layer3);
             };
          
          };
@@ -284,6 +331,7 @@
              var selected = d3
                  .selectAll("." + props.NAME)
                  .selectAll("." + props.NAME_EN)
+                 .selectAll("." + props.Name)
                  .style("stroke", "black")
                  .style("stroke-width", "2.5");
          
@@ -292,7 +340,9 @@
          
          //function to reset the element style on mouseout
          function dehighlight(props){
-             var selected = d3.selectAll("." + props.NAME).selectAll("." + props.NAME_EN)
+             var selected = d3.selectAll("." + props.NAME)
+                            .selectAll("." + props.NAME_EN)
+                            .selectAll("." + props.Name)
                  .style("stroke", function(){
                      return getStyle(this, "stroke")
                  })
@@ -358,6 +408,19 @@
                 ": </b> <p> Assigned to " + props.Armistice ; 
                 }
              }
+             else if (expressed === "Present Day" ) {
+                if (props.Armistice === "Water"){ 
+                    if (props.NAME === "Bound11") {
+                        var labelAttribute = "<h1> Sea of Galilee </h1>";
+                    }
+                    if (props.NAME === "Bound3") {
+                        var labelAttribute = "<h1> Dead Sea </h1>";
+                    }
+                }
+                else {
+                    var labelAttribute = "<h1>" + props.Name + "</h1>";
+                }
+             };
 
              //create info label div
              var infolabel = d3.select("body")
