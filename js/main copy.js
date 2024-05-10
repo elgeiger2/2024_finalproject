@@ -187,10 +187,7 @@
          };
 
 
-         //function to calculate proportional symbols
-         function createPropSymbols(settlements){
-
-         };
+       
 
          
          //function to create a dropdown menu for attribute selection
