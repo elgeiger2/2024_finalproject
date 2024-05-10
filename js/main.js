@@ -261,7 +261,8 @@
          function changeAttribute(attribute, csvData, settlements, map, path) {
              //change the expressed attribute
              expressed = attribute;
-
+             d3.selectAll(".settlements")
+             .remove()
             if (expressed === "UN Partition Plan") {
                 //recolor enumeration units
                 var armisticelayer = d3.selectAll(".boundaries")
