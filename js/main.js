@@ -9,6 +9,10 @@
     var layer3 = "Israeli settlements are communities established by Jewish people throughout the West Bank in order to gain a majority population in strategic locations. Settlements first began to pop up in the late 1960s following the Six Day War in 1967. The Israeli government considers these settlements to be their right and treat their residents as Israeli citizens, but the settlements are considered illegal among much of the international community. While settlements are approved by the Israeli government, many more communities have been established without this approval; these are referred to as outposts. As of now, there are 147 settlements and 191 outposts in the West Bank. These settlements allow Israel to exert control over the land they consider to be rightfully theirs by establishing a Jewish majority among Palestinian communities. These settlements have become increasingly problematic since the beginning of the Israel-Hamas war, with settlers attacking Palestinians and damaging.";
 
     var currentLayer = layer1;
+
+    document.getElementById('legend').style.visibility='hidden'
+            document.getElementById('legend2').style.visibility='hidden'
+            document.getElementById('legend3').style.visibility='hidden'
  
  //begin script when window loads
  window.onload = setMap();
@@ -268,6 +272,7 @@
                     else if (value === "Corpus Separatum") {return "rgb(236,255,169)"}
                 })
                 setInfoLayer(layer1);
+                updateLegend('1');
             }
             else if (expressed === "1949 Armistice") {
                 //recolor enumeration units
@@ -284,7 +289,7 @@
                     else if (value === "Corpus Separatum") {return "rgb(236,255,169)"}
                 });
                 setInfoLayer(layer2);
-                
+                updateLegend('2');
                 
             }
             else if (expressed === "Present Day") {
@@ -303,6 +308,7 @@
                     }
                 });
                 setInfoLayer(layer3);
+                updateLegend('3');
             };
          
          };
@@ -315,7 +321,21 @@
             infoText.innerText = currentLayer;
          }
          
-        
+        // updates legend
+         function updateLegend(num) {
+            document.getElementById('legend').style.visibility='hidden'
+            document.getElementById('legend2').style.visibility='hidden'
+            document.getElementById('legend3').style.visibility='hidden'
+            if (num === "1") {
+                document.getElementById('legend').style.visibility='visible'
+            }
+            if (num === "2") {
+                document.getElementById('legend2').style.visibility='visible'
+            }
+            if (num === "3") {
+                document.getElementById('legend3').style.visibility='visible'
+            }
+         }
          
          //function to highlight enumeration units and bars
          function highlight(props){
