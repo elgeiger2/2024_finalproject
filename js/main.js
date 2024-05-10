@@ -37,9 +37,6 @@
  
  var path = d3.geoPath()
      .projection(projection);
-
-var longLatPoint = [31.5522, 35.0189];
-var projectedPoint = projection(longLatPoint);
  
      var promises = [
          d3.csv("data/arm_Data.csv"),
@@ -49,26 +46,19 @@ var projectedPoint = projection(longLatPoint);
         
      ];
      Promise.all(promises).then(callback);
- 
-     
- 
+    
  function callback(data) {
      var csvData = data[0],
          countries = data[1],
-         boundaries = data[2],
+         boundaries = data[2];
          settlements = data[3];
 
-         console.log(boundaries)
      //translate TopoJSON
      var countryBound = topojson.feature(countries, countries.objects.Countries2).features,
          armBound = topojson.feature(boundaries, boundaries.objects.Boundaries).features;
-        //  settlements = settlements.features;
+         settlements = settlements.features;
  
         //  setGraticule(map,path)
-        var settlementsLayer = map.append("path")
-        .datum(settlements)
-        .attr("class", settlements)
-        .attr("d", path);
  
          armBound = joinData(armBound, csvData);
  
@@ -193,35 +183,35 @@ var projectedPoint = projection(longLatPoint);
              var desc = armisticelayer.append("desc")
              .text('{"stroke": "#000", "stroke-width": "0.5px"}');
 
-            //  var settlementsLayer = map
-            //  .selectAll(".settlements")
-            //  .data(settlements)
-            //  .enter()
-            //  .append("path")
-            //  .attr("d", path)
-            //  .attr("class", function(d){
-            //      return "settlements " + d.properties.Name;
-            //  })
-            //  .style("fill", function(d){
-            //      var value = d.properties.Name;
-            //      if (value) {
-            //          return " #FSDE83";
-            //      }
-            //      else {
-            //          return;
-            //      }
-            //  })
-            //  .on("mouseover", function(event, d){
-            //      highlight(d.properties);
-            //  })
-            //  .on("mouseout", function(event, d){
-            //      dehighlight(d.properties);
-            //  })
-            //  .on("mousemove", moveLabel);
+             var settlementsLayer = map
+             .selectAll(".settlements")
+             .data(settlements)
+             .enter()
+             .append("path")
+             .attr("d", path)
+             .attr("class", function(d){
+                 return "settlements " + d.properties.Name;
+             })
+             .style("fill", function(d){
+                 var value = d.properties.Name;
+                 if (value) {
+                     return " #FSDE83";
+                 }
+                 else {
+                     return;
+                 }
+             })
+             .on("mouseover", function(event, d){
+                 highlight(d.properties);
+             })
+             .on("mouseout", function(event, d){
+                 dehighlight(d.properties);
+             })
+             .on("mousemove", moveLabel);
  
-            //  var desc = settlementsLayer.append("desc")
-            //  .text('{"stroke": "#000", "stroke-width": "0.5px"}');
-            
+             var desc = settlementsLayer.append("desc")
+             .text('{"stroke": "#000", "stroke-width": "0.5px"}');
+
          };
   
          
@@ -297,7 +287,6 @@ var projectedPoint = projection(longLatPoint);
             }
             else if (expressed === "Present Day") {
                 //recolor enumeration units
-                console.log(true)
                 var settlements = d3.selectAll(".settlements")
                 .transition()
                 .duration(1000)
