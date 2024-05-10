@@ -9,6 +9,10 @@
     var layer3 = "Israeli settlements are communities established by Jewish people throughout the West Bank in order to gain a majority population in strategic locations. Settlements first began to pop up in the late 1960s following the Six Day War in 1967. The Israeli government considers these settlements to be their right and treat their residents as Israeli citizens, but the settlements are considered illegal among much of the international community. While settlements are approved by the Israeli government, many more communities have been established without this approval; these are referred to as outposts. As of now, there are 147 settlements and 191 outposts in the West Bank. These settlements allow Israel to exert control over the land they consider to be rightfully theirs by establishing a Jewish majority among Palestinian communities. These settlements have become increasingly problematic since the beginning of the Israel-Hamas war, with settlers attacking Palestinians and damaging.";
 
     var currentLayer = layer1;
+
+    document.getElementById('legend').style.visibility='hidden'
+            document.getElementById('legend2').style.visibility='hidden'
+            document.getElementById('legend3').style.visibility='hidden'
  
  //begin script when window loads
  window.onload = setMap();
@@ -64,7 +68,7 @@
  
          setEnumerationUnits(armBound,map,path, countryBound, settlements);
  
-         createDropdown(csvData);
+         createDropdown(csvData, settlements, map, path);
  
          };
  
@@ -121,7 +125,36 @@
             return armBound;
          };
          
-     
+         function setSettlementUnits(settlements, map, path) {
+            var settlementsLayer = map
+            .selectAll(".settlements")
+            .data(settlements)
+            .enter()
+            .append("path")
+            .attr("d", path)
+            .attr("class", function(d){
+                return "settlements " + d.properties.Name;
+            })
+            .style("fill", function(d){
+                var value = d.properties.Name;
+                if (value) {
+                    return " #FSDE83";
+                }
+                else {
+                    return;
+                }
+            })
+            .on("mouseover", function(event, d){
+                highlight(d.properties);
+            })
+            .on("mouseout", function(event, d){
+                dehighlight(d.properties);
+            })
+            .on("mousemove", moveLabel);
+
+            var desc = settlementsLayer.append("desc")
+            .text('{"stroke": "#000", "stroke-width": "0.5px"}');
+         }
          
          function setEnumerationUnits(armBound, map, path, countries, settlements){
 
@@ -183,49 +216,20 @@
              var desc = armisticelayer.append("desc")
              .text('{"stroke": "#000", "stroke-width": "0.5px"}');
 
-             var settlementsLayer = map
-             .selectAll(".settlements")
-             .data(settlements)
-             .enter()
-             .append("path")
-             .attr("d", path)
-             .attr("class", function(d){
-                 return "settlements " + d.properties.Name;
-             })
-             .style("fill", function(d){
-                 var value = d.properties.Name;
-                 if (value) {
-                     return " #FSDE83";
-                 }
-                 else {
-                     return;
-                 }
-             })
-             .on("mouseover", function(event, d){
-                 highlight(d.properties);
-             })
-             .on("mouseout", function(event, d){
-                 dehighlight(d.properties);
-             })
-             .on("mousemove", moveLabel);
- 
-             var desc = settlementsLayer.append("desc")
-             .text('{"stroke": "#000", "stroke-width": "0.5px"}');
-
          };
   
          
          
          //function to create a dropdown menu for attribute selection
            
-             function createDropdown(csvData) {
+             function createDropdown(csvData, settlements, map, path) {
                  //add select element
                  var dropdown = d3
                      .select("body")
                      .append("select")
                      .attr("class", "dropdown")
                      .on("change", function () {
-                         changeAttribute(this.value, csvData);
+                         changeAttribute(this.value, csvData, settlements, map, path);
                      });
                 
                 //add initial option
@@ -249,7 +253,7 @@
                      });
              };
          
-         function changeAttribute(attribute, csvData) {
+         function changeAttribute(attribute, csvData, settlements, map, path) {
              //change the expressed attribute
              expressed = attribute;
 
@@ -268,6 +272,7 @@
                     else if (value === "Corpus Separatum") {return "rgb(236,255,169)"}
                 })
                 setInfoLayer(layer1);
+                updateLegend('1');
             }
             else if (expressed === "1949 Armistice") {
                 //recolor enumeration units
@@ -284,24 +289,26 @@
                     else if (value === "Corpus Separatum") {return "rgb(236,255,169)"}
                 });
                 setInfoLayer(layer2);
-                
+                updateLegend('2');
                 
             }
             else if (expressed === "Present Day") {
                 //recolor enumeration units
+                setSettlementUnits(settlements, map, path)
                 var settlements = d3.selectAll(".settlements")
                 .transition()
                 .duration(1000)
                 .style("fill", function (d) {
                     var value = d.properties.Name;
                     if (value) {
-                        return "rgb(255, 195, 193)";
+                        return "rgb(100,137,173)";
                     } 
                     else  {
                         return;
                     }
                 });
                 setInfoLayer(layer3);
+                updateLegend('3');
             };
          
          };
@@ -314,7 +321,21 @@
             infoText.innerText = currentLayer;
          }
          
-        
+        // updates legend
+         function updateLegend(num) {
+            document.getElementById('legend').style.visibility='hidden'
+            document.getElementById('legend2').style.visibility='hidden'
+            document.getElementById('legend3').style.visibility='hidden'
+            if (num === "1") {
+                document.getElementById('legend').style.visibility='visible'
+            }
+            if (num === "2") {
+                document.getElementById('legend2').style.visibility='visible'
+            }
+            if (num === "3") {
+                document.getElementById('legend3').style.visibility='visible'
+            }
+         }
          
          //function to highlight enumeration units and bars
          function highlight(props){
