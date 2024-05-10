@@ -33,6 +33,7 @@
     border: medium solid #000000;
     margin: 70px 0 0 30px;
     background-color: rgb(188, 230, 255);
+    width: 40%;
 }
 
 .infolabel {
