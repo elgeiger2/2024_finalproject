@@ -449,9 +449,13 @@
                 else if (props.NAME_EN) {
                     var labelAttribute = "<h1>" + props.NAME_EN + "</h1>";
                 }
+                else if (props.Armistice === "Egypt and Jordan") {
+                    var labelAttribute = "<b>" + expressed +
+                    ": </b> <p> Palestine" ; 
+                }
                 else if (props.Armistice) {
                     var labelAttribute = "<b>" + expressed +
-                    ": </b> <p> Assigned to " + props.Armistice ; 
+                    ": </b> <p>  " + props.Armistice ; 
                 }
                 else {
                     var labelAttribute = "<h1>" + props.Name + "</h1>";
